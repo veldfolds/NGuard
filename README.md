@@ -19,3 +19,8 @@ pip install nguard
 ## License
 
 `nguard` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+
+
+## RUN TESTS
+
+from cmd run python -m unittest test\nguardtests.py
