@@ -1,7 +1,8 @@
 
 from .customexceptions import WrongTypeError
 
-class NGuard():
+
+class Nguard():
     """A guard class to ensure the arguments in a constructor or method
        are valid"""
 
@@ -52,7 +53,7 @@ class NGuard():
     def is_type(self, x, y):
         """To avoid repetitions i have wrapped the type checks methods
         within this helper function"""
-        if x != type(y):
+        if type(x) != y:
             raise WrongTypeError("{} is not {} type".format(x, y))
     
         
