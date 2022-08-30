@@ -1,4 +1,21 @@
+# nguard
 
-# NGUARD
+[![PyPI - Version](https://img.shields.io/pypi/v/nguard.svg)](https://pypi.org/project/nguard)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/nguard.svg)](https://pypi.org/project/nguard)
 
-A simple library that provides guard clauses for domain modelling.
+-----
+
+**Table of Contents**
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install nguard
+```
+
+## License
+
+`nguard` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
