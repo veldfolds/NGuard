@@ -1,10 +1,11 @@
 
 from customexceptions import WrongTypeError
 
+
 class Nguard():
     """A guard class to ensure the arguments in a constructor or method
        are valid"""
-
+    
     def not_null(self, arg1):
         '''Ensures the input argument is not null'''
         if arg1 is None:
