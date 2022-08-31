@@ -1,5 +1,6 @@
 
-from customexceptions import WrongTypeError
+from .customexceptions import WrongTypeError, InEqualityError, EqualityError
+
 
 
 class Nguard():
@@ -9,19 +10,19 @@ class Nguard():
     def not_null(self, arg1):
         '''Ensures the input argument is not null'''
         if arg1 is None:
-            raise Exception("{} should not be null".format(arg1))
+            raise WrongTypeError("{} should not be null".format(arg1))
         return self
 
     def greater_than(self, arg1, arg2):
-        """Ensures the input argument is greater than a given threshold"""
+        """Ensures that arg1 is greater than arg2"""
         if arg1 <= arg2 :
-            raise Exception("{} should be greater than {}".format(arg1, arg2))
+            raise InEqualityError("{} should be greater than {}".format(arg1, arg2))
         return self
 
     def less_than(self, arg1, arg2):
-        """Ensures the input argument is less than a given threshold"""
+        """Ensures the arg1 is less arg2"""
         if arg1 >= arg2 :
-            raise Exception("{} should be less than {}".format(arg1, arg2))
+            raise InEqualityError("{} should be less than {}".format(arg1, arg2))
         return self
 
     def is_int(self, arg):

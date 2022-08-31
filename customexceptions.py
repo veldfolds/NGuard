@@ -9,5 +9,5 @@ class EqualityError(Exception):
 
 class InEqualityError(Exception):
     '''Raised when either input value is not less than a predetermined value or
-    input value is not greater than a predetermined value '''
+        input value is not greater than a predetermined value '''
     pass
