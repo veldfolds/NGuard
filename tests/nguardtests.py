@@ -1,6 +1,6 @@
-from nguard.nguard import Nguard
-from nguard.customexceptions import WrongTypeError
+from customexceptions import WrongTypeError
 import unittest
+from ..nguard import Nguard
 
 class NguardTests(unittest.TestCase):
 

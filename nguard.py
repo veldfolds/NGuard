@@ -1,6 +1,5 @@
 
-from .customexceptions import WrongTypeError
-
+from customexceptions import WrongTypeError
 
 class Nguard():
     """A guard class to ensure the arguments in a constructor or method

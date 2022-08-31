@@ -1,3 +1,0 @@
-
-class WrongTypeError(Exception):
-    pass
