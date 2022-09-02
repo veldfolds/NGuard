@@ -1,7 +1,6 @@
 
-from .customexceptions import WrongTypeError, InEqualityError, EqualityError
-
-
+import unittest
+from customexceptions import WrongTypeError, InEqualityError, EqualityError
 
 class Nguard():
     """A guard class to ensure the arguments in a constructor or method
@@ -58,3 +57,19 @@ class Nguard():
             raise WrongTypeError("{} is not {} type".format(x, y))
     
         
+
+
+class NguardTests(unittest.TestCase):
+
+    nguard = Nguard()
+
+    def test_inttype(self):
+       with self.assertRaises(WrongTypeError):
+                self.nguard.is_int("wonder")
+
+    def test_stringtype(self):
+        with self.assertRaises(WrongTypeError):
+                self.nguard.is_string(8)
+
+
+unittest.main()
