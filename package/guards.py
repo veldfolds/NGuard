@@ -57,6 +57,17 @@ class Nguard():
             raise WrongTypeError("{} is not {} type".format(x, y))
     
         
+class Entity():
+    '''Sample case study'''
+    def __init__(self, name, id, rank) -> None:
+        (Nguard().is_string(name)
+                 .is_int(id)
+                 .is_int(rank)
+        )
+
+        self.name = name
+        self.id = id 
+        self.rank = rank
 
 
 class NguardTests(unittest.TestCase):
@@ -70,6 +81,12 @@ class NguardTests(unittest.TestCase):
     def test_stringtype(self):
         with self.assertRaises(WrongTypeError):
                 self.nguard.is_string(8)
+
+    def test_subject(self):
+        with self.assertRaises(WrongTypeError):
+                Entity("object", "objectid", 4)
+
+
 
 
 unittest.main()
