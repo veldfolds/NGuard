@@ -23,4 +23,4 @@ pip install nguard
 
 ## RUN TESTS
 
-from cmd run python -m unittest test\nguardtests.py
+from cmd run `python -m unittest test\nguardtests.py`

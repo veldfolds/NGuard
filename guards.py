@@ -1,16 +1,16 @@
-
+# Importing the custom exceptions
 from .customexceptions import WrongTypeError, InEqualityError, EqualityError
-
-
 
 class Nguard():
     """A guard class to ensure the arguments in a constructor or method
        are valid"""
     
-    def not_null(self, arg1):
-        '''Ensures the input argument is not null'''
-        if arg1 is None:
-            raise WrongTypeError("{} should not be null".format(arg1))
+    def not_null(self, *args):
+        '''Ensures the input arguments are not null'''
+        for arg in args:
+            if arg is None:
+                raise WrongTypeError("{} should not be null".format(arg))
+
         return self
 
     def greater_than(self, arg1, arg2):
@@ -54,7 +54,17 @@ class Nguard():
     def is_type(self, x, y):
         """To avoid repetitions i have wrapped the type checks methods
         within this helper function"""
-        if type(x) != y:
-            raise WrongTypeError("{} is not {} type".format(x, y))
-    
-        
+
+        if not isinstance(x, y):
+            raise WrongTypeError("{} is not {} type".format(x, y.__name__))
+
+    def is_equal(self, x, y):
+        '''
+            Check if two arguments are equal
+            If equal return True, else raise EqualityError
+        '''
+        if (x != y):
+            raise EqualityError("{} is not equal to {}".format(x, y))
+        else:
+            return True
+
